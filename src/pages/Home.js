@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Kotak from '../component/kotak';
+import Kotak from '../component/Kotak';
 
 function Raja()
 {
@@ -13,16 +13,17 @@ function Jelata()
 function App() {
   const [color, setColor] = useState("");
   const [nama, setNama] = useState("");
-  let name = document.getElementById('nama')
+  let name = document.getElementById('nama');
+  let warna = document.getElementById('test'); 
 
   return (
     <div className="App">
       <p style={{color:color}}> Home {color} </p>
-      <input id='test' onInput={() => setColor(document.getElementById('test').value)}></input>
-      <input id='nama' onInput={() => setNama(document.getElementById('nama').value)}></input>
+      <input id='test' onInput={() => setColor(warna.value)}></input>
+      <input id='nama' onInput={() => setNama(name.value)}></input>
 
       {
-        name.value === 'Admin' ? <Raja/> : <Jelata/>
+        name.value === 'Admin' ? <Raja /> : <Jelata />
       }
 
       <tr>
