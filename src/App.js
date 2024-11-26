@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [color, setColor] = useState("");
+  const [notif, setNotif] = useState("");
+
+  if (count < 0)
+  {
+    setNotif("Angka Tidak Boleh Kurang dari 0");
+    setCount(0);
+  }
+  else if (count > 10)
+  {
+    setNotif("Angka Tidak Boleh Lebih dari 10");
+    setCount(10);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p> Clicked {count} Times</p>
+      <button onClick={() => setCount(count + 1)}>+ 1</button>
+      <button onClick={() => setCount(count - 1)}>- 1</button>
+      <button onClick={() => setCount(0)}>Reset</button>
+
+      <p style={{color : color}}> Input {color}</p>
+      <input id='hitam' onInput={() => setColor(document.getElementById('hitam').value)}></input>
+      <p>{notif}</p>
     </div>
   );
 }
