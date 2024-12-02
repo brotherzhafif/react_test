@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import Navbar from './component/Navbar';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,6 +20,8 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
+
       <p> Clicked {count} Times</p>
       <button onClick={() => setCount(count + 1)}>+ 1</button>
       <button onClick={() => setCount(count - 1)}>- 1</button>

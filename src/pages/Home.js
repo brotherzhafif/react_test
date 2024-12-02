@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Kotak from '../component/Kotak';
+import Navbar from '../component/Navbar';
 
 function Raja()
 {
@@ -10,21 +10,19 @@ function Jelata()
   return <h3>Dasar Rakyat Jelata</h3>
 }
 
-function App() {
+function Home() {
+  
   const [color, setColor] = useState("");
   const [nama, setNama] = useState("");
   let name = document.getElementById('nama');
   let warna = document.getElementById('test'); 
 
+  
   return (
     <div className="App">
       <p style={{color:color}}> Home {color} </p>
-      <input id='test' onInput={() => setColor(warna.value)}></input>
-      <input id='nama' onInput={() => setNama(name.value)}></input>
-
-      {
-        name.value === 'Admin' ? <Raja /> : <Jelata />
-      }
+      <input value={color} id='test' onInput={() => setColor(warna.value)}></input>
+      <input value={nama} id='nama' onInput={() => setNama(name.value)}></input>
 
       <tr>
         <th>
@@ -33,13 +31,15 @@ function App() {
       </tr>
       <tr>
         <td>
-          {nama}
+          { nama }
         </td>
       </tr>
 
-      <Kotak/>
+      <Navbar />
+      
+      { document.getElementById('nama').value === 'Admin' ? <Raja /> : <Jelata /> }
     </div>
   );
 }
 
-export default App;
+export default Home;

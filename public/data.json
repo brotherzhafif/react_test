@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "nama": "John Doe",
+      "description": "A software developer with expertise in React and Laravel."
+    },
+    {
+      "id": 2,
+      "nama": "Jane Smith",
+      "description": "An experienced UI/UX designer specializing in modern web design."
+    },
+    {
+      "id": 3,
+      "nama": "Michael Johnson",
+      "description": "A data scientist passionate about machine learning and AI."
+    },
+    {
+      "id": 4,
+      "nama": "Emily Davis",
+      "description": "A full-stack developer who loves working on open-source projects."
+    },
+    {
+      "id": 5,
+      "nama": "David Wilson",
+      "description": "A DevOps engineer with a focus on cloud computing and automation."
+    }
+]
+  
